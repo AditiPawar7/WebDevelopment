@@ -1,0 +1,7 @@
+<input type="text" onkeydown="showKey(event)">
+<p id="key"></p>
+<script>
+  function showKey(e) {
+    document.getElementById("key").textContent = "You pressed: " + e.key;
+  }
+</script>

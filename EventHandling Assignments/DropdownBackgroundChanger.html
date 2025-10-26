@@ -1,0 +1,13 @@
+<select onchange="changeColor(this.value)">
+  <option>Select Color</option>
+  <option>Red</option>
+  <option>Green</option>
+  <option>Blue</option>
+  <option>Yellow</option>
+</select>
+
+<script>
+  function changeColor(color) {
+    document.body.style.backgroundColor = color.toLowerCase();
+  }
+</script>

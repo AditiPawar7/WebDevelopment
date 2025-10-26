@@ -1,0 +1,13 @@
+<select id="fruit" onchange="showSelection()">
+  <option>Select Fruit</option>
+  <option>Mango</option>
+  <option>Banana</option>
+  <option>Apple</option>
+</select>
+<p id="output"></p>
+<script>
+  function showSelection() {
+    const fruit = document.getElementById("fruit").value;
+    document.getElementById("output").textContent = "You selected: " + fruit;
+  }
+</script>

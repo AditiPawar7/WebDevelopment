@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Double Click to Change Text</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    p {
+      font-size: 22px;
+      color: #333;
+      cursor: pointer;
+      border: 2px solid #4CAF50;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    p:hover {
+      background-color: #e8f5e9;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🖱️ Double Click Example</h2>
+  <p id="text">Double-click here to change this text!</p>
+
+  <script>
+    // Get the paragraph element
+    const textPara = document.getElementById("text");
+
+    // Add double-click event listener
+    textPara.addEventListener("dblclick", function() {
+      // Change the paragraph text
+      textPara.textContent = "✨ You just double-clicked me!";
+    });
+  </script>
+
+</body>
+</html>

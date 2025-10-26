@@ -1,0 +1,7 @@
+<input type="text" id="name" oninput="updateText()" placeholder="Type something...">
+<p id="output"></p>
+<script>
+  function updateText() {
+    document.getElementById("output").textContent = document.getElementById("name").value;
+  }
+</script>

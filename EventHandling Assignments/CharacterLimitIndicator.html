@@ -1,0 +1,12 @@
+<textarea id="text" maxlength="100" oninput="updateCount()"></textarea>
+<p id="count"></p>
+<script>
+  function updateCount() {
+    const max = 100;
+    const len = document.getElementById("text").value.length;
+    const remaining = max - len;
+    const count = document.getElementById("count");
+    count.textContent = remaining + " characters left";
+    count.style.color = remaining < 0 ? "red" : "black";
+  }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Table Generator</title>
+  <style>
+    table, td { border: 1px solid black; border-collapse: collapse; padding: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Dynamic Table Generator</h2>
+  Rows: <input type="number" id="rows" min="1">
+  Columns: <input type="number" id="cols" min="1">
+  <button onclick="generateTable()">Create Table</button>
+  <div id="tableContainer"></div>
+
+  <script>
+    function generateTable() {
+      const rows = document.getElementById("rows").value;
+      const cols = document.getElementById("cols").value;
+      let table = "<table>";
+
+      for (let i = 0; i < rows; i++) {
+        table += "<tr>";
+        for (let j = 0; j < cols; j++) {
+          table += `<td>Row ${i+1}, Col ${j+1}</td>`;
+        }
+        table += "</tr>";
+      }
+
+      table += "</table>";
+      document.getElementById("tableContainer").innerHTML = table;
+    }
+  </script>
+</body>
+</html>

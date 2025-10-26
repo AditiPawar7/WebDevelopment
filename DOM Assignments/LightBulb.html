@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Light Bulb</title>
+  <style>
+    body { text-align: center; font-family: Arial; margin-top: 50px; }
+    img { width: 150px; }
+    button { padding: 10px 20px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h2>Light Bulb ON/OFF</h2>
+  <img id="bulb" src="https://www.w3schools.com/js/pic_bulboff.gif">
+  <br>
+  <button id="btn" onclick="toggleBulb()">Turn ON</button>
+
+  <script>
+    let isOn = false;
+    function toggleBulb() {
+      const bulb = document.getElementById("bulb");
+      const btn = document.getElementById("btn");
+      if (isOn) {
+        bulb.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+        btn.textContent = "Turn ON";
+      } else {
+        bulb.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+        btn.textContent = "Turn OFF";
+      }
+      isOn = !isOn;
+    }
+  </script>
+</body>
+</html>

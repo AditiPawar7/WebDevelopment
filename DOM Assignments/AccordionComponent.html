@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Accordion Component</title>
+  <style>
+    .accordion { width: 400px; margin: 20px auto; border: 1px solid #ccc; }
+    .question { background: lightgray; padding: 10px; cursor: pointer; }
+    .answer { display: none; padding: 10px; border-top: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <div class="accordion">
+    <div class="item">
+      <div class="question" onclick="toggleAccordion(0)">Q1: What is HTML?</div>
+      <div class="answer">HTML stands for Hyper Text Markup Language.</div>
+    </div>
+    <div class="item">
+      <div class="question" onclick="toggleAccordion(1)">Q2: What is CSS?</div>
+      <div class="answer">CSS is used for styling web pages.</div>
+    </div>
+    <div class="item">
+      <div class="question" onclick="toggleAccordion(2)">Q3: What is JavaScript?</div>
+      <div class="answer">JavaScript makes web pages interactive.</div>
+    </div>
+  </div>
+
+  <script>
+    function toggleAccordion(index) {
+      const answers = document.querySelectorAll(".answer");
+      answers.forEach((ans, i) => {
+        ans.style.display = (i === index && ans.style.display !== "block") ? "block" : "none";
+      });
+    }
+  </script>
+</body>
+</html>

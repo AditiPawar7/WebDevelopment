@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Changer</title>
+  <style>
+    #box {
+      width: 300px; height: 200px;
+      background-color: lightgray;
+      margin: 50px auto;
+      text-align: center;
+      padding-top: 80px;
+      font-size: 20px;
+    }
+    button { margin: 5px; padding: 10px; }
+  </style>
+</head>
+<body>
+  <div id="box">Click a button to change my color</div>
+  <div style="text-align:center;">
+    <button onclick="changeColor('red')">Red</button>
+    <button onclick="changeColor('green')">Green</button>
+    <button onclick="changeColor('blue')">Blue</button>
+    <button onclick="changeColor('Pink')">Pink</button>
+  </div>
+
+  <script>
+    function changeColor(color) {
+      document.getElementById("box").style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>

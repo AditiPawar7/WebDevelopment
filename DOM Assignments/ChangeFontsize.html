@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Font Size</title>
+  <style>
+    p { font-size: 20px; text-align: center; }
+    button { margin: 5px; }
+  </style>
+</head>
+<body>
+  <p id="text">This is a sample paragraph. Change my font size!</p>
+  <div style="text-align:center;">
+    <button onclick="increaseFont()">Increase Font</button>
+    <button onclick="decreaseFont()">Decrease Font</button>
+  </div>
+
+  <script>
+    let size = 20;
+    const text = document.getElementById("text");
+    function increaseFont() {
+      size += 2;
+      text.style.fontSize = size + "px";
+    }
+    function decreaseFont() {
+      size -= 2;
+      text.style.fontSize = size + "px";
+    }
+  </script>
+</body>
+</html>

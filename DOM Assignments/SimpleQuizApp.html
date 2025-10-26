@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Quiz App</title>
+  <style>
+    body { font-family: Arial; text-align: center; }
+    .question { font-size: 20px; margin: 20px; }
+    button { margin: 5px; padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h2>Simple Quiz</h2>
+  <div id="quiz"></div>
+  <p id="result"></p>
+
+  <script>
+    const quizData = [
+      { q: "1. What is 2 + 2?", options: ["3", "4", "5"], answer: "4" },
+      { q: "2. Capital of India?", options: ["Mumbai", "Delhi", "Kolkata"], answer: "Delhi" },
+      { q: "3. Which is a programming language?", options: ["HTML", "CSS", "JavaScript"], answer: "JavaScript" }
+    ];
+
+    let current = 0;
+    let score = 0;
+    const quizDiv = document.getElementById("quiz");
+    const result = document.getElementById("result");
+
+    function loadQuestion() {
+      if (current < quizData.length) {
+        const q = quizData[current];
+        quizDiv.innerHTML = `
+          <div class="question">${q.q}</div>
+          ${q.options.map(opt => `<button onclick="checkAnswer('${opt}')">${opt}</button>`).join("")}
+        `;
+      } else {
+        quizDiv.innerHTML = `<h3>Your Score: ${score}/${quizData.length}</h3>`;
+      }
+    }
+
+    function checkAnswer(selected) {
+      if (selected === quizData[current].answer) score++;
+      current++;
+      loadQuestion();
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>

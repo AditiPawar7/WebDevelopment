@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Counter App</title>
+  <style>
+    body { text-align: center; font-family: Arial; }
+    button { margin: 10px; padding: 10px 20px; font-size: 18px; color: black; background-color: blueviolet; }
+    #count { font-size: 40px; margin: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Counter App</h1>
+  <h2 id="count">0</h2>
+  <button onclick="decrement()">Decrement</button>
+  <button onclick="reset()">Reset</button>
+  <button onclick="increment()">Increment</button>
+
+  <script>
+    let count = 0;
+    const counter = document.getElementById("count");
+
+    function increment() {
+      count++;
+      counter.textContent = count;
+    }
+
+    function decrement() {
+      count--;
+      counter.textContent = count;
+    }
+
+    function reset() {
+      count = 0;
+      counter.textContent = count;
+    }
+  </script>
+</body>
+</html>
